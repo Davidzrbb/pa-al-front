@@ -1,0 +1,28 @@
+<div
+  style="margin-top :-10%; height: 108.5vh; background: url('assets/bgconnect.png') no-repeat center; background-size: cover">
+  <div class="wrapper fadeInDown">
+    <div id="formContent" class="size-wrapper">
+      <p *ngIf="returnError">
+        <ngb-alert [dismissible]="true" (closed)="closeAlert()">
+          <strong>Attention !</strong> {{returnMessage}}.
+        </ngb-alert>
+      </p>
+      <br>
+      <div class="fadeIn first">
+        <h3>Inscription</h3>
+        <br>
+      </div>
+      <div>
+        <input type="text" #login class="fadeIn second" placeholder="Login">
+        <input type="password" #password class="fadeIn third" placeholder="Mot de passe">
+        <br><br>
+        <input type="submit" class="fadeIn fourth" value="Valider"
+               (click)="subscribeUser(login.value,password.value)">
+      </div>
+
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/login" routerLinkActive="active">Connexion</a>
+      </div>
+    </div>
+  </div>
+</div>
